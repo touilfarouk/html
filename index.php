@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>tire</title>
-</head>
-<body>
-<head>gohead</head>
 
-
-
- phpunit -c phpunit.xml --coverage-html coverage
-
- sudo chmod 777 vendor
-
-
-</body>
-</html>
+<?php use \Foo\Bar\Bar;
+require dirname(__DIR__) . '/html/autoload.php';
+$bar = new Bar();
+$bar->sayHello();
+//git push origin master
