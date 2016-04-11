@@ -1,2 +1,2 @@
-# html
-- This base architectur for php application
+# Php base architecture
+## This base architecture for php application
