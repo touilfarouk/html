@@ -1,0 +1,82 @@
+* install pakages on ubuntu
+** Download option with wget
+*** wget -t0 --waitretry=5 -c -T5 yourUrl
+***  where
+    -t0 - unlimited retries
+    --waitretry - seconds to wait between retries
+    -c resume partially downloaded files
+    -T5 - set all timeouts to 5 seconds. Timeouts here are connect timeout, read timeout and dns timeout
+
+** https://www.howtoforge.com/tutorial/how-to-upgrade-linux-kernel-in-ubuntu-1604-server/
+** http://linuxpitstop.com/install-openemm-on-ubuntu-linux-16-04/
+** For the successful installation setup of OpenEMM on Ubuntu 16.04, we need to setup the following software stack.
+
+   1- Sendmail 8.9 or later, or Postfix 2.6 or later
+   2- Sun Java SE JDK 8
+   3- Apache Tomcat 7 or 8
+   4- MySQL 5.1 to 5.6
+   5- Python 2.4 or later (but not 3.x!)
+
+* Installation proccess 
+** making an updates of the system 
+*** sudo apt-get update && sudo apt-get upgrade
+
+** Install specific version of Mysql 5.6
+*** add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe' 
+*** apt-get update
+** Install Mysql python
+*** apt-get  install mysql-server-5.6 python-mysqldb 
+** create a user
+*** groupadd openemm
+*** useradd -m -g openemm -G adm -d /home/openemm -s /bin/bash -c "OpenEMM-2015" openemm 
+** install posix
+*** apt-get install postfix
+** Installing Java 8
+*** add-apt-repository ppa:webupd8team/java
+*** apt-get update
+*** apt-get install oracle-java8-installer
+** Create a new directory and setup the home variable environment for the newly installed Java.
+*** mkdir -p /opt/openemm
+*** update-alternatives --config java > /tmp/java_location.txt
+** Use command below for symlyincing java to openemm root as shown.
+*** ln -s /usr/lib/jvm/java-8-oracle/jre /opt/openemm/java
+*** echo "export JAVA_HOME=/opt/openemm/java" > ~/.bashrc
+*** source ~/.bashrc
+** Installing Tomcat:
+*** cd /opt/openemm/
+*** sudo wget http://repo2.maven.org/maven2/org/apache/tomcat/tomcat/8.0.36/tomcat-8.0.36.tar.gz
+*** tar -xzf tomcat-8.0.36.tar.gz
+*** cd apache-tomcat-8.0.36/
+** You can also create the soft link using below command.
+*** ln -s apache-tomcat-8.0.24 tomcat
+** f you want to make sure that Tomcat works, then run the command below to start tomcat process and check for Tomcat installation screen using below URL.
+***  bin/startup.sh
+*** http://localhost:8080
+** To stop tomcat you can use below command with tomcat directory.
+*** bin/shutdown.sh
+
+** Enable OpenEMM Access in Firewall:
+***  ufw status
+*** ufw enable
+*** ufw allow 25/tcp
+*** ufw allow 8080/tcp
+***  ufw allow 8044/tcp
+** You can verifiy your settings with below command.
+*** ufw status
+** If you plan to use the internal SMTP server of OpenEMM instead of Sendmail or Postfix, you have to open port 8025 (OpenEMM SMTP server) as well:
+*** ufw allow 8025/tcp
+** Committing all these changes requires a restart of the Ubuntu firewall, which is done with
+*** service ufw restart
+* Installation of OpenEMM 2015:
+
+* point de l'hébergement
+** TODO l'ouverture de compt chez OVH et l'obtention de  l'ID
+** TODO Communiquer le ID a l'hebergeur et attendre 24 heure
+** TODO recevoir une copier de l'email envoyer pas l'hébergeur a OVH
+** TODO télécharger une saufguard du comptenu et des email 
+** TODO recvoir un email de comfirmation de OVH
+** TODO Acheté l'espace OVH
+** TODO pointé les nouveau dns et charger les email dans leur répertoire aproprier
+*** demander apré le service des tiquettes  y
+
+

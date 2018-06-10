@@ -1,0 +1,131 @@
+
+
+#+TITLE: GUIDE D’HYGIÈNE INFORMATIQUE
+
+* RENFORCER LA SÉCURITÉ DE SON SYSTÈME D’INFORMATION EN 42 MESURES
+** AVANT-PROPOS  
+*** Paru en janvier 2013 dans sa première version, le Guide d’hygiène informatique
+      édité par l’ANSSI s’adresse aux entités publiques ou privées dotées
+      d’une direction des systèmes d’information (DSI) ou de professionnels dont la
+      mission est de veiller à leur sécurité. Il est né du constat que si les mesures qui
+      y sont édictées avaient été appliquées par les entités concernées, la majeure
+      partie des attaques informatiques ayant requis une intervention de l’agence
+      aurait pu être évitée.
+      Cette nouvelle version a fait l’objet d’une mise à jour portant à la fois sur les
+      technologies et pratiques – nouvelles ou croissantes – avec lesquelles il s’agit
+      de composer en matière de sécurité (nomadisme, séparation des usages, etc.)
+      mais aussi sur la mise à disposition d’outils (indicateurs de niveau standard ou
+      renforcé) pour éclairer le lecteur dans l’appréciation des mesures énoncées.
+      Si l’objet de ce guide n’est pas la sécurité de l’information en tant que telle,
+      appliquer les mesures proposées maximise la sécurité du système d’information,
+      berceau des données de votre entité.
+      La sécurité n’est plus une option. À ce titre, les enjeux de sécurité numérique
+      doivent se rapprocher des préoccupations économiques, stratégiques ou
+      encore d’image qui sont celles des décideurs. En contextualisant le besoin,
+      en rappelant l’objectif poursuivi et en y répondant par la mesure concrète
+      correspondante, ce guide d’hygiène informatique est une feuille de route
+      qui épouse les intérêts de toute entité consciente de la valeur de ses données.
+
+
+#+TITLE: SOMMAIRE
+* Avant-proposées 
+** Mode d’emploi du guide
+- I    Sensibiliser et former - P.4
+- II   Connaître le système d’information - p.8
+- III  Authentifier et contrôler les accès - p.13
+- IV   Sécuriser les postes - p.20
+- V    Sécuriser le réseau - p.26
+- VI   Sécuriser l’administration - p.36
+- VII  Gérer le nomadisme - p.40
+- VIII Maintenir le système d’information à jour - p.45
+- IX   Superviser, auditer, réagir - p.48
+- X    Pour aller plus loin - p.55
+
+* MODE D’EMPLOI DU GUIDE
+** Le présent document comporte 42 règles de sécurité simples. Chacune d’entre
+    elles est importante et vous pouvez tout à fait les considérer indépendamment
+    les unes des autres pour améliorer votre niveau de sécurité sur quelques
+    points particuliers.
+    Cependant, nous vous conseillons d’utiliser ce guide comme base pour définir
+    un plan d’actions :
+    1. Commencez par établir un état des lieux pour chacune des règles grâce
+    à l’outil de suivi qui se trouve en annexe de ce document. Pour chaque
+    règle, déterminez si votre organisme atteint le niveau standard et, le cas
+    échéant, le niveau renforcé.
+    2. Si vous ne pouvez pas faire cet état des lieux par manque de connaissance
+    de votre système d’information, n’hésitez pas à solliciter l’aide
+    d’un spécialiste pour procéder à un diagnostic et assurer un niveau de
+    sécurité élémentaire. (à lire : ANSSI-CGPME, Guide des bonnes pratiques
+    de l’informatique, mars 2015).
+    3. à partir du constat établi à cette première étape, visez en priorité les
+    règles pour lesquelles vous n’avez pas encore atteint le niveau « standard »,
+    pour définir un premier plan d’actions. Si les mesures de ce guide doivent
+    être appliquées dans le cadre d’un référentiel publié par l’ANSSI et sauf
+    mention explicite, il s’agit des mesures de niveau « standard ».
+    4. Lorsque vous avez atteint partout le niveau « standard », vous pouvez
+    définir un nouveau plan d’actions en visant le niveau « renforcé » pour
+    les règles concernées.
+
+* SENSIBILISER ET FORMER
+** Former les équipes opérationnelles à la sécurité des systèmes d’information
+
+    Les équipes opérationnelles (administrateurs réseau, sécurité et système, chefs
+    de projet, développeurs, RSSI) ont des accès privilégiés au système d’information.
+    Elles peuvent, par inadvertance ou par méconnaissance des conséquences
+    de certaines pratiques, réaliser des opérations génératrices de vulnérabilités.
+    Citons par exemple l’affectation de comptes disposant de trop nombreux
+    privilèges par rapport à la tâche à réaliser, l’utilisation de comptes personnels
+    pour exécuter des services ou tâches périodiques, ou encore le choix de mots
+    de passe peu robustes donnant accès à des comptes privilégiés.
+    Les équipes opérationnelles, pour être à l’état de l’art de la sécurité des systèmes
+    d’information, doivent donc suivre - à leur prise de poste puis à intervalles
+    réguliers - des formations sur :
+    > la législation en vigueur ;
+    > les principaux risques et menaces ;
+    > le maintien en condition de sécurité ;
+    > l’authentification et le contrôle d’accès ;
+    > le paramétrage fin et le durcissement des systèmes ;
+    > le cloisonnement réseau ;
+    > et la journalisation.
+    Cette liste doit être précisée selon le métier des collaborateurs en considérant
+    des aspects tels que l’intégration de la sécurité pour les chefs de projet, le
+    développement sécurisé pour les développeurs, les référentiels de sécurité
+    pour les RSSI, etc.
+    Il est par ailleurs nécessaire de faire mention de clauses spécifiques dans les
+    contrats de prestation pour garantir une formation régulière à la sécurité des
+    systèmes d’information du personnel externe et notamment les infogérants.
+
+** Sensibiliser les utilisateurs aux bonnes pratiques élémentaires de sécurité informatique
+    
+    Chaque utilisateur est un maillon à part entière de la chaîne des systèmes
+    d’information. À ce titre et dès son arrivée dans l’entité, il doit être informé
+    des enjeux de sécurité, des règles à respecter et des bons comportements à
+    adopter en matière de sécurité des systèmes d’information à travers des actions
+    de sensibilisation et de formation.
+    Ces dernières doivent être régulières, adaptées aux utilisateurs ciblés, peuvent
+    prendre différentes formes (mails, affichage, réunions, espace intranet dédié,
+    etc.) et aborder au minimum les sujets suivants :
+    > les objectifs et enjeux que rencontre l’entité en matière de sécurité des
+    systèmes d’information ;
+    > les informations considérées comme sensibles ;
+    > les réglementations et obligations légales ;
+    > les règles et consignes de sécurité régissant l’activité quotidienne : respect
+    de la politique de sécurité, non-connexion d’équipements personnels au
+    réseau de l’entité, non-divulgation de mots de passe à un tiers, non-réutilisation
+    de mots de passe professionnels dans la sphère privée et inversement,
+    signalement d’événements suspects, etc. ;
+    > les moyens disponibles et participant à la sécurité du système : verrouillage
+    systématique de la session lorsque l’utilisateur quitte son poste, outil de
+    protection des mots de passe, etc.
+    / renforcé
+    Pour renforcer ces mesures, l’élaboration et la signature d’une charte des
+    moyens informatiques précisant les règles et consignes que doivent respecter
+    les utilisateurs peut être envisagée.
+
+    ANSSI, Charte d’utilisation des moyens informatiques et des outils numériques – Guide d’élaboration en 8 points clés pour les PME et ETI, guide, juin 2017
+
+
+* TODO Pour le site d'intervalle technologies
+** remettre le précédent look du sider
+** OVERVIEW de mission d’audit (mission avec 's' a la fin)
+ 
